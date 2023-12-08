@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing Demo</title>
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #loginForm, #signupForm, #uploadForm, #downloadForm {
+            display: none;
+        }
+
+        .file-input {
+            margin-bottom: 10px;
+        }
+
+        #fileList {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h1>Welcome to File Sharing system</h1>
+
+    <!-- Login Form -->
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form id="login">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" required>
+            <br>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required>
+            <br>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupForm">
+        <h2>Sign Up</h2>
+        <form id="signup">
+            <label for="signupUsername">Username:</label>
+            <input type="text" id="signupUsername" required>
+            <br>
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" required>
+            <br>
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" required>
+            <br>
+            <button type="button" onclick="signup()">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Upload Form (Visible only for Ops User) -->
+    <div id="uploadForm">
+        <h2>Upload File</h2>
+        <form id="upload" enctype="multipart/form-data">
+            <label for="file" class="file-input">Choose File:</label>
+            <input type="file" id="file" accept=".pptx, .docx, .xlsx" required>
+            <br>
+            <button type="button" onclick="upload()">Upload</button>
+        </form>
+    </div>
+
+    <!-- Download Form -->
+    <div id="downloadForm">
+        <h2>Download File</h2>
+        <form id="download">
+            <label for="filename">File Name:</label>
+            <input type="text" id="filename" required>
+            <br>
+            <button type="button" onclick="download()">Download</button>
+        </form>
+    </div>
+
+    <!-- List Uploaded Files -->
+    <div id="fileList">
+        <h2>Uploaded Files</h2>
+        <ul id="files"></ul>
+    </div>
+</div>
+
+
+
+</body>
+</html>
